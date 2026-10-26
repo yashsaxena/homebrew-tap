@@ -18,6 +18,12 @@ cask "daakseva" do
 
   app "Daakseva.app"
 
+  uninstall quit:   "com.novosapiens.daakseva",
+            script: {
+              executable: "/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister",
+              args:       ["-u", "#{appdir}/Daakseva.app"],
+            }
+
   zap trash: [
     "~/Library/Application Support/CrashReporter/Daakseva_*.plist",
     "~/Library/Application Support/Daakseva",
