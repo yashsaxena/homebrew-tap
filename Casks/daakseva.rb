@@ -18,8 +18,9 @@ cask "daakseva" do
 
   app "Daakseva.app"
 
-  uninstall quit:   "com.novosapiens.daakseva",
-            script: {
+  uninstall quit:       "com.novosapiens.daakseva",
+            login_item: "Daakseva",
+            script:     {
               executable: "/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister",
               args:       ["-u", "#{appdir}/Daakseva.app"],
             }
